@@ -11,10 +11,10 @@ import raw;
 namespace zlib;
 
 fn push_be32(out: u8[>..]&, v: u32) {
-    out.push((v >> 24) as! u8);
-    out.push(((v >> 16) & 0xff) as! u8);
-    out.push(((v >> 8) & 0xff) as! u8);
-    out.push((v & 0xff) as! u8);
+    out.push((v >> 24) as u8);
+    out.push(((v >> 16) & 0xff) as u8);
+    out.push(((v >> 8) & 0xff) as u8);
+    out.push((v & 0xff) as u8);
 }
 
 fn be32(src: u8[:], at: i64) -> u32 {

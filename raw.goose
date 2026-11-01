@@ -24,7 +24,7 @@ fn put(out: u8[>..]&, bw: Bw&, v: u64, k: i64) {
     bw.acc = bw.acc | ((v & mask) << bw.n);
     bw.n += k;
     while bw.n >= 8 {
-        out.push((bw.acc & 0xff) as! u8);
+        out.push((bw.acc & 0xff) as u8);
         bw.acc = bw.acc >> 8;
         bw.n -= 8;
     }
@@ -32,7 +32,7 @@ fn put(out: u8[>..]&, bw: Bw&, v: u64, k: i64) {
 
 fn flush(out: u8[>..]&, bw: Bw&) {
     if bw.n > 0 {
-        out.push((bw.acc & 0xff) as! u8);
+        out.push((bw.acc & 0xff) as u8);
         bw.acc = 0;
         bw.n = 0;
     }
@@ -221,8 +221,8 @@ fn stored_bytes(n: i64) -> i64 {
 }
 
 fn push_u16(out: u8[>..]&, v: i64) {
-    out.push((v & 0xff) as! u8);
-    out.push(((v >> 8) & 0xff) as! u8);
+    out.push((v & 0xff) as u8);
+    out.push(((v >> 8) & 0xff) as u8);
 }
 
 fn emit_stored(data: u8[:]) -> u8[>..] {

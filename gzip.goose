@@ -10,10 +10,10 @@ import raw;
 namespace gzip;
 
 fn push_le32(out: u8[>..]&, v: u32) {
-    out.push((v & 0xff) as! u8);
-    out.push(((v >> 8) & 0xff) as! u8);
-    out.push(((v >> 16) & 0xff) as! u8);
-    out.push(((v >> 24) & 0xff) as! u8);
+    out.push((v & 0xff) as u8);
+    out.push(((v >> 8) & 0xff) as u8);
+    out.push(((v >> 16) & 0xff) as u8);
+    out.push(((v >> 24) & 0xff) as u8);
 }
 
 fn le32(src: u8[:], at: i64) -> u32 {
@@ -24,7 +24,7 @@ fn le32(src: u8[:], at: i64) -> u32 {
 }
 
 fn low32(n: i64) -> u32 {
-    return ((n as u64) & 0xffffffff) as! u32;
+    return ((n as u64) & 0xffffffff) as u32;
 }
 
 fn skip_zero(src: u8[:], at: i64) -> i64, bool {

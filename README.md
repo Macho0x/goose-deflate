@@ -6,7 +6,7 @@
 
 <p align="center">
   🗜️ DEFLATE, zlib, and gzip for <a href="https://github.com/aardappel/goose">Goose</a><br>
-  <strong>0.2</strong> · <a href="LICENSE">Apache-2.0</a>
+  <strong>0.2.1</strong> · <a href="LICENSE">Apache-2.0</a>
 </p>
 
 DEFLATE as specified by [RFC 1951](https://www.rfc-editor.org/rfc/rfc1951), with the [zlib](https://www.rfc-editor.org/rfc/rfc1950) and [gzip](https://www.rfc-editor.org/rfc/rfc1952) wrappers.

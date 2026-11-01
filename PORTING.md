@@ -27,4 +27,4 @@ The stored vector in the test is built from the RFC, two stored blocks for `ab` 
 - `gzip::compress` writes no file name, mtime 0, XFL 0, and OS 255. `gzip::decompress` reads one member and rejects bytes after it.
 - There is no streaming API and no output-size cap. A hostile stream can grow until the data stack stops it.
 - Checksums, matching, and Huffman decoding follow the input. They are not constant-time.
-- Failure is a trailing bool. `abort` is reserved for a broken internal invariant, such as the fixed Huffman table failing to build.
+- Failure is a trailing bool. `abort` is reserved for a broken internal invariant, such as the fixed Huffman table failing to build. Those aborts in `inflate.goose` stay. A cast in the wrappers is checked. A masked byte still fits.
