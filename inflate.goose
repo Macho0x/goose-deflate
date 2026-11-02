@@ -204,10 +204,8 @@ fn stored_block(src: u8[:], c: Cur&, out: u8[>..]&) -> bool {
     if (len ^ nlen) != 0xffff { return false; }
     let n = len as i64;
     if c.at + n > src.len { return false; }
-    for i in 0..n {
-        out.push(src[c.at]);
-        c.at += 1;
-    }
+    out.append(src[c.at..c.at + n]);
+    c.at += n;
     return true;
 }
 

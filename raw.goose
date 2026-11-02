@@ -242,7 +242,7 @@ fn emit_stored(data: u8[:]) -> u8[>..] {
         if off + chunk == data.len { out.push(0x01); } else { out.push(0x00); }
         push_u16(out, chunk);
         push_u16(out, chunk ^ 0xffff);
-        for i in 0..chunk { out.push(data[off + i]); }
+        out.append(data[off..off + chunk]);
         off += chunk;
     }
     return out;
