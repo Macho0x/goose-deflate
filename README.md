@@ -6,7 +6,7 @@
 
 <p align="center">
   🗜️ DEFLATE, zlib, and gzip for <a href="https://github.com/aardappel/goose">Goose</a><br>
-  <strong>0.2.2</strong> · <a href="LICENSE">Apache-2.0</a>
+  <strong>0.2.3</strong> · <a href="LICENSE">Apache-2.0</a>
 </p>
 
 DEFLATE as specified by [RFC 1951](https://www.rfc-editor.org/rfc/rfc1951), with the [zlib](https://www.rfc-editor.org/rfc/rfc1950) and [gzip](https://www.rfc-editor.org/rfc/rfc1952) wrappers.
@@ -53,6 +53,17 @@ A good run prints `deflate ok`.
 ## Good to know
 
 `zlib::decompress` and `gzip::decompress` return false when the wrapper or the stream is rejected. Checksums are not constant-time. An empty raw block is `03 00`.
+
+## Benchmarks
+
+`bench.goose` times this package. The row names stay fixed, so a clang run before a change and a clang run after it compare.
+
+```sh
+goose build -o deflate-bench bench.goose --cc clang
+./deflate-bench
+```
+
+`goose bench.goose` runs in TinyCC. That is not a timing result. Numbers depend on the machine, so this page does not publish them.
 
 ## License
 
